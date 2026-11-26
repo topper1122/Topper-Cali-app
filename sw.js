@@ -1,4 +1,4 @@
-const C='sw-v3';
+const C='sw-v4';
 const FILES=['./','index.html','firebase-config.js','manifest.webmanifest','icon-192.png','icon-512.png',...['push','pull','legs','core'].flatMap(b=>Array.from({length:9},(_,i)=>b+(i+1)+'.webp'))];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(C).then(c=>Promise.allSettled(FILES.map(f=>c.add(f)))));self.skipWaiting()});
 self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!=C).map(x=>caches.delete(x)))).then(()=>self.clients.claim())));
