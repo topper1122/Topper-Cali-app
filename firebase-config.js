@@ -1,7 +1,6 @@
-// Paste your Firebase web app config here (Firebase console > Project settings > Your apps > Web).
 export default {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyDIs0i_8kTwuzixgi--nJYkSRHHk8HLrrU",
+  authDomain: "topper-cali-app.firebaseapp.com",
+  projectId: "topper-cali-app",
+  appId: "1:788674651826:web:4fb3a6b037f78168818bab"
 };
