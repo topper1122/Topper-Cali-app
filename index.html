@@ -24,7 +24,6 @@ h2{font:italic 28px var(--serif);margin:6px 0 12px}
 .ck.on{background:var(--o);border-color:var(--o);color:var(--bg)}
 input.r{width:64px;background:var(--bg);border:1px solid var(--d);border-radius:10px;color:var(--o);padding:8px;text-align:center;font-size:16px}
 .muted{color:var(--g);font-size:14px}
-.wheel{min-height:100%;display:flex;flex-direction:column;align-items:center;background:repeating-radial-gradient(circle at 50% 100%,transparent 0 150px,#23252b 151px 153px);touch-action:pan-y}
 .line{display:flex;flex-direction:column-reverse;align-items:center;padding:20px 0 6px}
 .node{display:flex;flex-direction:column;align-items:center;position:relative;padding-bottom:26px;text-align:center}
 .node:not(:first-child)::after{content:"";position:absolute;bottom:-4px;width:4px;height:30px;background:var(--d);z-index:0}
@@ -34,10 +33,6 @@ input.r{width:64px;background:var(--bg);border:1px solid var(--d);border-radius:
 .node.done .nc::after{content:"✓";position:absolute;right:-6px;top:-6px;width:26px;height:26px;border-radius:50%;background:var(--o);color:var(--bg);font-weight:700;display:grid;place-items:center;font-size:15px}
 .nc svg{width:100%;height:100%}.nc img,.big img{width:100%;height:100%;display:block;border-radius:50%;object-fit:cover}.ic.lk{filter:grayscale(1) brightness(.4)}.big{overflow:hidden}
 .nm{font-weight:700;font-size:14px;margin-top:8px;background:var(--bg);padding:0 6px;z-index:1}.node.lock .nm{color:var(--d)}.gl{font-size:12px;color:var(--g);background:var(--bg);padding:0 6px;z-index:1}
-.hub{position:sticky;bottom:0;width:100%;height:150px;display:flex;justify-content:center;align-items:flex-end;pointer-events:none}
-.hub>*{pointer-events:auto}
-.hc{width:130px;height:130px;border-radius:50%;border:3px solid var(--o);background:#16171b;display:grid;place-items:center;margin-bottom:-45px;font:italic 32px var(--serif)}
-.hs{position:absolute;bottom:50px;width:74px;height:74px;border-radius:50%;background:var(--p);border:3px solid var(--d);color:var(--g);font-weight:700;font-size:13px}
 .sheet{position:fixed;inset:0;background:#000a;display:none;align-items:flex-end;justify-content:center;z-index:5}.sheet.on{display:flex}
 .sheet>div{background:var(--p);width:100%;max-width:560px;border-radius:24px 24px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom));max-height:90%;overflow:auto}
 .big{width:150px;height:150px;border-radius:50%;border:5px solid var(--o);background:var(--bg);margin:0 auto 10px}
@@ -55,8 +50,58 @@ input.t{width:100%;background:var(--bg);border:1px solid var(--d);border-radius:
 @keyframes up{0%{transform:translateY(0);opacity:0}15%{opacity:.9}100%{transform:translateY(-230px) translateX(14px);opacity:0}}
 @media (prefers-reduced-motion:reduce){.l1,.l2,.l3,.em{animation:none}}
 .wk{display:flex;justify-content:space-between}.wk div{text-align:center;font-size:12px;color:var(--g)}.wk i{display:block;width:34px;height:34px;border-radius:50%;border:2px solid var(--d);margin-top:4px}.wk i.on{background:var(--o);border-color:var(--o)}.wk i.rd{border-color:var(--o)}
+:root{--hb:calc(214px + env(safe-area-inset-bottom,0px));--pv:calc(42px + env(safe-area-inset-bottom,0px))}
+header{gap:8px}
+#bk{font-size:26px;width:36px;text-align:left;color:var(--g);line-height:1}
+#ttl{flex:1;font:italic 24px var(--serif)}
+main.fixed{overflow:hidden}
+.card{border-left:6px solid var(--d);box-shadow:0 2px 12px #0005;transition:transform .2s,border-color .4s}
+.card.ok{border-left-color:var(--o)}
+button.card{display:block;width:100%;text-align:left}
+button.card:active{transform:scale(.98)}
+.sg{animation:rise .55s cubic-bezier(.25,.8,.25,1) both;animation-delay:calc(var(--i,0)*80ms)}
+main.q .sg{animation:none}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}}
+button.hero{display:flex;align-items:center;gap:16px;padding:26px 18px;min-height:156px}
+button.navc{display:flex;align-items:center;justify-content:space-between;padding:22px 18px;min-height:98px}
+.navc b,.nmx{font:italic 28px var(--serif);font-weight:400;display:block}
+.chev{font-size:30px;color:var(--d);margin-left:auto}
+.av{width:56px;height:56px;border-radius:50%;border:3px solid var(--o);background:var(--bg);display:grid;place-items:center;font-size:26px;font-weight:700;flex:none}
+.av.big{width:92px;height:92px;font-size:44px}
+.prof{text-align:center}.prof .av{margin:4px auto 8px}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.tiles .card{margin:0}.tiles b{font-size:30px;display:block}
+.eg{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.eg button{font-size:34px;padding:10px;background:var(--bg);border-radius:16px;border:2px solid var(--d)}
+.dys{display:flex;gap:2px;background:#16171b;border:1px solid #2e3037;border-radius:24px;padding:6px;margin-bottom:18px}
+.dy{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:8px 0;border-radius:18px;position:relative;color:var(--g);transition:background .3s,color .3s}
+.dy b{font-size:13px}.dy span{font-size:10px}
+.dy.on{background:var(--o);color:var(--bg)}
+.dy i{position:absolute;top:6px;right:8px;width:6px;height:6px;border-radius:50%;background:currentColor}
+.rt{display:flex;justify-content:space-between;align-items:baseline}
+.pb{height:6px;background:#2a2c34;border-radius:3px;margin:8px 0 16px;overflow:hidden}
+.pb>i{display:block;height:100%;background:var(--o);border-radius:3px;transition:width .6s}
+.rh{display:flex;justify-content:space-between;align-items:center;padding-bottom:12px;border-bottom:1px solid #2e3037;margin-bottom:6px}
+.rh>span:first-child{display:flex;align-items:center;gap:12px}
+.cb{width:32px;height:32px;border-radius:9px;border:2px solid var(--d);display:grid;place-items:center;font-weight:700;color:var(--bg);transition:background .3s}
+.cb.on{background:var(--o);border-color:var(--o)}
+.rr{color:var(--g);font-weight:600}
+.kv{display:flex;padding:8px 0}.kv span{width:110px;color:var(--g)}.kv b{font-weight:500}
+.kv.dn b{text-decoration:line-through;color:var(--g)}
+#stg{position:absolute;inset:0;overflow:hidden;background:repeating-radial-gradient(circle at 50% calc(100% - var(--pv)),transparent 0 150px,#23252b 151px 153px);user-select:none;-webkit-user-select:none}
+.lad,.cbx{position:absolute;left:0;right:0;top:0;bottom:var(--hb);-webkit-mask-image:linear-gradient(#0000,#000 28px,#000 calc(100% - 20px),#0000);mask-image:linear-gradient(#0000,#000 28px,#000 calc(100% - 20px),#0000)}
+.lad{overflow-y:auto;touch-action:pan-y;z-index:1;scrollbar-width:none}.lad::-webkit-scrollbar{display:none}
+.cbx{overflow:hidden}.clone{position:absolute;left:0;right:0}
+.fx{position:absolute;inset:0;z-index:2;pointer-events:none;overflow:hidden}
+.rot{position:absolute;inset:0;transform-origin:50% calc(100% - var(--pv))}
+.ring{position:absolute;left:50%;bottom:var(--pv);width:0;height:0;z-index:3;transition:transform .8s cubic-bezier(.25,.8,.25,1)}
+.dash{position:absolute;left:-120px;top:-120px;width:240px;height:240px;border:2px dashed #2e3037;border-radius:50%}
+.sp{position:absolute;left:0;top:0;width:0;height:0}
+.hs{position:absolute;left:-36px;top:-36px;width:72px;height:72px;border-radius:50%;background:var(--p);border:3px solid var(--d);color:var(--g);font:italic 15px var(--serif);transition:transform .8s cubic-bezier(.25,.8,.25,1),background .6s,border-color .6s,color .6s}
+.hs.sel{background:#16171b;border-color:var(--o);color:var(--o)}
+@media (prefers-reduced-motion:reduce){.ring,.hs,.sg{transition:none;animation:none}}
 </style></head><body>
-<div id="app"><header><button id="acct" class="chip">☰ <span id="who">Sign in</span></button><nav id="nav"><button data-t="w">Workout</button><button data-t="s" class="on">Skills</button><button data-t="p">Progress</button></nav><button id="st" class="chip">▲ <span id="sn">0</span> wk</button></header><main id="main"></main></div>
+<div id="app"><header><button id="bk" aria-label="Back">←</button><div id="ttl">Topper Cali</div><button id="st" class="chip">▲ <span id="sn">0</span> wk</button></header><main id="main"></main></div>
 <div id="timer"></div>
 <div class="sheet" id="sheet"><div id="sc"></div></div>
 <div id="flame"><button class="back" id="fb">←</button><div class="fl"><svg viewBox="0 0 100 120"><path class="l1" fill="#F8FAFC" d="M50 2C58 20 66 30 66 44c4-6 8-12 12-18 12 18 16 34 10 54-4 22-22 38-38 38S12 100 12 80C12 58 30 46 38 28 44 18 48 10 50 2Z"/><path class="l2" fill="#D6DAE0" d="M50 30c6 12 12 18 12 30 3-4 6-7 8-10 8 12 10 24 4 36-4 10-14 16-24 16s-20-8-22-20c-2-14 8-22 14-34 3-6 6-12 8-18Z"/><path class="l3" fill="#B2B7BF" d="M50 58c4 8 8 12 8 20 2-2 4-4 5-6 5 8 5 16 0 22-3 5-8 8-13 8s-12-4-13-12c-1-9 5-14 9-20 2-4 3-8 4-12Z"/></svg><b id="fn">0</b>
@@ -113,39 +158,5 @@ function rest(){let n=120;const e=$('#timer');clearInterval(tmr);const u=()=>{e.
 window.skipRest=()=>{clearInterval(tmr);$('#timer').style.display='none'};
 function sheet(h){$('#sc').innerHTML=h;$('#sheet').classList.add('on')}
 $('#sheet').onclick=e=>{if(e.target.id=='sheet')e.currentTarget.classList.remove('on')};
-function skills(){const b=BK[br],lv=S.lv[b];let n='';
-B[b].ex.forEach((e,i)=>{const c=i<lv?'done':i==lv?'cur':'lock';n+=`<div class="node ${c}" data-i="${i}"><div class="nc">${ico(b,i,c=='lock')}</div><div class="nm">${e[0]}</div><div class="gl">${goal(b,i)[0]}</div></div>`});
-$('#main').innerHTML=`<div class="wheel" id="wh"><div class="line">${n}</div><div style="height:70px"></div><div class="hub"><button class="hs" style="left:6%" data-d="-1">${B[BK[(br+3)%4]].n}</button><div class="hc">${B[b].n}</div><button class="hs" style="right:6%" data-d="1">${B[BK[(br+1)%4]].n}</button></div></div>`;
-$('#main').scrollTop=$('#main').scrollHeight;let x0;const w=$('#wh');w.ontouchstart=e=>x0=e.touches[0].clientX;w.ontouchend=e=>{const d=e.changedTouches[0].clientX-x0;if(Math.abs(d)>60){br=(br+(d<0?1:3))%4;skills()}};
-document.querySelectorAll('.hs').forEach(h=>h.onclick=()=>{br=(br+(+h.dataset.d+4))%4;skills()});
-document.querySelectorAll('.node').forEach(h=>h.onclick=()=>node(b,+h.dataset.i))}
-function node(b,i){const e=B[b].ex[i],lv=S.lv[b],g=goal(b,i);
-sheet(`<div class="big">${ico(b,i,i>lv)}</div><h2 style="text-align:center">${e[0]}</h2><div class="muted" style="text-align:center">${B[b].n} · level ${i+1} of 9</div><div class="chips"><span>Goal ${g[0]}</span><span>Rest 2 min</span></div><div class="card"><div class="muted">How to do it</div><p style="margin-top:6px">${e[2]}</p><p class="muted" style="margin-top:8px">Hit the goal on all 3 sets with clean form, then move up.</p></div><button class="btn" id="ms" ${i==lv?'':'disabled'}>${i<lv?'Mastered':i>lv?'Locked':'Mark as mastered'}</button>`);
-$('#ms').onclick=()=>{S.lv[b]=Math.min(9,lv+1);S.rdy[b]=0;save();$('#sheet').classList.remove('on');render()}}
-function today(){const d=new Date(),k=key(d),dow=(d.getDay()+6)%7;S.log[k]=S.log[k]||{w:{},wu:[]};return[S.log[k],dow,k]}
-function workout(){const[L,dow,k]=today();let h=`<div class="pad"><h2>${DN[dow]}</h2>`;
-if(TR.includes(dow)){h+=`<div class="card"><b>Warm-up</b>${WU.map((t,i)=>`<div class="row"><div class="ck ${L.wu[i]?'on':''}" data-wu="${i}">${L.wu[i]?'✓':''}</div>${t}</div>`).join('')}</div>`;
-BK.forEach(b=>{const lv=Math.min(S.lv[b],8),e=B[b].ex[lv],g=goal(b,lv),s=L.w[b]||[0,0,0].map(()=>[0,0]);h+=`<div class="card"><div class="row"><div style="width:56px;height:56px;border-radius:50%;border:3px solid var(--o);flex:none;overflow:hidden">${ico(b,lv)}</div><div><b>${e[0]}</b><div class="muted">${B[b].n} · ${g[0]}${S.rdy[b]?' · goal hit, mark it mastered in Skills':''}</div></div></div>${s.map((v,j)=>`<div class="row"><span class="muted" style="width:44px">Set ${j+1}</span><input class="r" type="number" inputmode="numeric" placeholder="${g[1]}" value="${v[0]||''}" data-b="${b}" data-j="${j}"><div class="ck ${v[1]?'on':''}" data-b="${b}" data-j="${j}">${v[1]?'✓':''}</div></div>`).join('')}</div>`});
-const all=BK.every(b=>(L.w[b]||[]).length==3&&L.w[b].every(v=>v[1]));h+=`<button class="btn" id="fin" ${all&&!L.done?'':'disabled'}>${L.done?'Session done':'Finish session'}</button>`}
-else h+=`<div class="card"><b>Rest day</b><p style="margin:8px 0">${RT[dow]}</p><button class="btn" id="fin">${L.done?'Done':'Mark done'}</button></div>`;
-h+=`<h2 style="margin-top:18px">This week</h2><div class="card">${DN.map((n,i)=>`<div class="row"><b style="width:44px;${i==dow?'':'color:var(--g)'}">${n}</b><span class="muted">${TR.includes(i)?'Full body: warm-up, push, pull, legs, core':RT[i]}</span></div>`).join('')}</div></div>`;
-$('#main').innerHTML=h;
-document.querySelectorAll('[data-wu]').forEach(c=>c.onclick=()=>{L.wu[c.dataset.wu]=!L.wu[c.dataset.wu];save();workout()});
-document.querySelectorAll('.r').forEach(r=>r.onchange=()=>{const a=L.w[r.dataset.b]=L.w[r.dataset.b]||[[0,0],[0,0],[0,0]];a[r.dataset.j][0]=+r.value;save()});
-document.querySelectorAll('.ck[data-b]').forEach(c=>c.onclick=()=>{const b=c.dataset.b,j=+c.dataset.j,a=L.w[b]=L.w[b]||[[0,0],[0,0],[0,0]],inp=document.querySelector(`.r[data-b=${b}][data-j="${j}"]`);if(!a[j][1]){const v=+inp.value;if(!v)return toast('Enter your reps first');a[j]=[v,1];if(j<2||a.some(z=>!z[1]))rest()}else a[j][1]=0;save();workout()});
-$('#fin')?.addEventListener('click',()=>{if(TR.includes(dow)){const before=streak();BK.forEach(b=>{const lv=Math.min(S.lv[b],8),nm=ex(b,lv)[0],r=L.w[b].map(v=>v[0]),best=Math.max(...r);(S.hist[nm]=S.hist[nm]||[]).push([k,best]);S.pb[nm]=Math.max(S.pb[nm]||0,best);if(r.every(v=>v>=goal(b,lv)[1]))S.rdy[b]=1});L.done=1;save();if(streak()>before)toast('Week complete! Streak '+streak())}else{L.done=!L.done;save()}render()})}
-function progress(){const ws=mon(new Date()),tn=streak();let h=`<div class="pad"><button class="card" id="sb" style="width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center"><span><b style="font-size:30px">${tn}</b> week streak<div class="muted">Tap for the flame</div></span><span style="font-size:34px">▲</span></button><div class="card"><div class="wk">${DN.map((n,i)=>{const d=S.log[key(add(ws,i))]?.done;return`<div>${n}<i class="${d?(TR.includes(i)?'on':'rd'):''}"></i></div>`}).join('')}</div></div><div class="card"><b>Mastered</b>${BK.map(b=>`<div class="row"><span style="width:60px">${B[b].n}</span><div style="flex:1;height:8px;background:var(--bg);border-radius:4px"><div style="width:${S.lv[b]/9*100}%;height:100%;background:var(--o);border-radius:4px"></div></div><span class="muted">${S.lv[b]}/9</span></div>`).join('')}</div>`;
-const names=Object.keys(S.hist);h+=`<div class="card"><b>Rep history</b>${names.length?`<select id="cs" class="t" style="margin:10px 0">${names.map(n=>`<option>${n}</option>`).join('')}</select><div id="ch"></div>`:'<p class="muted" style="margin-top:6px">Finish a session to see your chart.</p>'}</div><div class="card"><b>Personal bests</b>${Object.entries(S.pb).map(([n,v])=>`<div class="row"><span style="flex:1">${n}</span><b>${v}</b></div>`).join('')||'<p class="muted" style="margin-top:6px">No reps logged yet.</p>'}</div></div>`;
-$('#main').innerHTML=h;$('#sb').onclick=()=>{$('#fn').textContent=streak();$('#flame').classList.add('on')};
-const draw=()=>{const a=S.hist[$('#cs').value].slice(-14),m=Math.max(...a.map(v=>v[1]),1),pt=a.map((v,i)=>`${10+i*(280/Math.max(a.length-1,1))},${100-v[1]/m*85}`).join(' ');$('#ch').innerHTML=`<svg viewBox="0 0 300 110" width="100%"><polyline points="${pt}" fill="none" stroke="#F8FAFC" stroke-width="3"/>${pt.split(' ').map(p=>`<circle cx="${p.split(',')[0]}" cy="${p.split(',')[1]}" r="4" fill="#F8FAFC"/>`).join('')}</svg><div class="muted">Best reps per session, last ${a.length}. Top = ${m}</div>`};if(names.length){$('#cs').onchange=draw;draw()}}
-function render(){$('#sn').textContent=streak();document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.t==tab));({w:workout,s:skills,p:progress})[tab]()}
-$('#nav').onclick=e=>{if(e.target.dataset.t){tab=e.target.dataset.t;render()}};$('#st').onclick=()=>{$('#fn').textContent=streak();$('#flame').classList.add('on')};$('#fb').onclick=()=>$('#flame').classList.remove('on');
-$('#acct').onclick=()=>{if(!fb)return sheet('<h2>Account</h2><p class="muted">Add your Firebase keys in firebase-config.js to sign in and sync across devices. Until then, progress is saved on this device.</p>');
-sheet(user?`<h2>Account</h2><p>${user.email}</p><p class="muted" style="margin:8px 0 16px">Your progress syncs to every device you sign in on.</p><button class="btn" id="so">Sign out</button>`:`<h2>Sign in</h2><input class="t" id="em" type="email" placeholder="Email"><input class="t" id="pw" type="password" placeholder="Password"><p class="muted" id="er" style="margin-bottom:10px"></p><button class="btn" id="si">Sign in</button><button class="btn" id="su" style="margin-top:10px;background:var(--bg);color:var(--o)">Create account</button><button class="btn" id="go" style="margin-top:10px;background:var(--bg);color:var(--o)">Continue with Google</button>`);
-const go=f=>async()=>{try{await f();$('#sheet').classList.remove('on')}catch(x){$('#er').textContent=x.code?.replace('auth/','').replace(/-/g,' ')||'Something went wrong'}},A=fb.auth;
-if(user)$('#so').onclick=()=>fb.signOut(A).then(()=>$('#sheet').classList.remove('on'));else{$('#si').onclick=go(()=>fb.signInWithEmailAndPassword(A,$('#em').value,$('#pw').value));$('#su').onclick=go(()=>fb.createUserWithEmailAndPassword(A,$('#em').value,$('#pw').value));$('#go').onclick=go(()=>fb.signInWithPopup(A,new fb.GoogleAuthProvider()))}};
-render();
-if('serviceWorker'in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
-if(cfg.apiKey&&!cfg.apiKey.startsWith('YOUR')){try{const V='https://www.gstatic.com/firebasejs/10.12.2/',[a,t,s]=await Promise.all([import(V+'firebase-app.js'),import(V+'firebase-auth.js'),import(V+'firebase-firestore.js')]);const app=a.initializeApp(cfg);fb={...t,...s,auth:t.getAuth(app)};db=s.getFirestore(app);let un;
-t.onAuthStateChanged(fb.auth,u=>{user=u;$('#who').textContent=u?u.email.split('@')[0]:'Sign in';un?.();if(u)un=s.onSnapshot(s.doc(db,'users',u.uid),d=>{const r=d.exists()&&JSON.parse(d.data().d);if(r&&r.u>S.u){S=r;localStorage.sw=JSON.stringify(S);render()}else if(!r||r.u<S.u)save()})})}catch(e){console.warn('Firebase unavailable',e)}}
-</script></body></html>
+const R=120,AN=55,EZ='cubic-bezier(.25,.8,.25,1)',DUR=matchMedia('(prefers-reduced-motion:reduce)').matches?1:800;
+const brOf=(
